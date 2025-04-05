@@ -1,0 +1,475 @@
+/* Global styles for the home page */
+.home-page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Video Background - Applied globally */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure all content is above the video background */
+.hero-section,
+.about-section,
+.skills-section,
+.projects-section,
+.gallery-preview-section,
+.contact-cta-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 2rem 0;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+}
+
+.text-content {
+  flex: 1;
+  padding-right: 2rem;
+  color: #ffffff;
+}
+
+.bold-text {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.simple-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+/* Typing animation */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background-color: #ffffff;
+  margin-left: 5px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.anime-gif {
+  max-width: 100%;
+  height: auto;
+}
+
+/* About Section */
+.about-section {
+  position: relative;
+  padding: 4rem 0;
+  background-color: transparent !important;
+  min-height: 100vh; /* Ensure the section takes at least the full viewport height */
+  display: flex;
+  align-items: center;
+}
+
+.about-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.eyes-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width to reach page corners */
+  height: 100%; /* Full height of the section */
+  object-fit: cover; /* Ensure the image covers the entire area */
+  z-index: -1;
+  opacity: 0.8; /* Adjust opacity for readability */
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px; /* Keep content centered and constrained */
+  margin: 0 auto; /* Center the content */
+  padding: 0 2rem; /* Add padding to prevent content from touching edges */
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+  order: 1;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  flex: 2;
+  color: #ffffff;
+  order: 2;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.about-text h2.section-title {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Skills Section */
+.skills-section {
+  background-color: transparent !important;
+  padding: 4rem 0;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-bar {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: #4e6bff;
+  border-radius: 5px;
+}
+
+.skill-card p {
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Projects Section */
+.projects-section {
+  background-color: transparent !important;
+  padding: 4rem 0;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  margin-bottom: 1.5rem;
+}
+
+.project-link {
+  color: #4e6bff;
+  font-weight: 600;
+  position: relative;
+}
+
+.project-link:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4e6bff;
+  transition: width 0.3s;
+}
+
+.project-link:hover:after {
+  width: 100%;
+}
+
+.projects-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Gallery Section */
+.gallery-preview-section {
+  background-color: transparent !important;
+  padding: 4rem 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  height: 200px;
+}
+
+.gallery-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+}
+
+.gallery-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Contact CTA Section */
+.contact-cta-section {
+  padding: 5rem 0;
+  background-color: rgba(78, 107, 255, 0.9);
+  color: white;
+}
+
+.contact-cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #4e6bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3a54d6;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #4e6bff;
+  border: 2px solid #4e6bff;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(78, 107, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .home-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .text-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .bold-text {
+    font-size: 2.5rem;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-image {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+
+  .about-text {
+    order: 2;
+    text-align: center;
+  }
+
+  .about-text h2.section-title {
+    text-align: center;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .gallery-grid,
+  .skills-container,
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .purple-background {
+    background-image: url('../pics/purple.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+    color: #131313;
+  }
+}

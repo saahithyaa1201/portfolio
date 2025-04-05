@@ -1,0 +1,264 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #4e6bff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: #4e6bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3a57e5;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #4e6bff;
+  border: 2px solid #4e6bff;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(78, 107, 255, 0.1);
+}
+
+/* Header Styles */
+.header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4e6bff;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #333;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #4e6bff;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4e6bff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover:after,
+.nav-link.active:after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.menu-icon::before {
+  transform: translateY(-10px);
+}
+
+.menu-icon::after {
+  transform: translateY(10px);
+}
+
+.menu-icon.open {
+  background-color: transparent;
+}
+
+.menu-icon.open::before {
+  transform: rotate(45deg);
+}
+
+.menu-icon.open::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+    z-index: 101;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Contact CTA Section Styles */
+.contact-cta-section {
+  background-color: #4e6bff;
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.contact-cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-cta-content .btn-primary {
+  background-color: white;
+  color: #4e6bff;
+}
+
+.contact-cta-content .btn-primary:hover {
+  background-color: #f0f0f0;
+}
